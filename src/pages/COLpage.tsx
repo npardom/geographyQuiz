@@ -94,9 +94,14 @@ function COLpage() {
       playDone();
     }
   }, [count, capitalChecked]);
+
+  useEffect(()=>{
+    document.body.className = '';
+    document.body.classList.add('colBackground');
+  }, []);
   
   return (
-    <div className ="background COL">
+    <div className ="appContainer">
       <button className = "buttonTop goHome" onClick={goToHome}>
         <img src={homeIcon} className = "buttonIcon"/>
         <div className ="buttonText">Main Page</div>

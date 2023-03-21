@@ -1,6 +1,7 @@
 import USAlogo from "../assets/USA.png";
 import COLlogo from "../assets/COL.png";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from 'react'
 
 function StartPage() {
     const navigate = useNavigate();
@@ -13,8 +14,14 @@ function StartPage() {
         navigate('/COL-Quiz');
     }
 
+    useEffect(()=>{
+        document.body.className = '';
+        document.body.classList.add('firstBackground');
+    }, []);
+    
+
   return (
-    <div className ="background first">
+    <div className ="appContainer">
     <div className="App">
         <h1 className = "welcomeTitle">Welcome</h1>
         <p className = "description1"> Select a country to start</p>

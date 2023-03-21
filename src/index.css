@@ -17,12 +17,7 @@
   }
 }
 
-.background {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position-x: center;
-  background-position-y: center;
+.appContainer {
   position:absolute;
   top:0px;
   right:0px;
@@ -33,31 +28,31 @@
   justify-content: center;
 }
 
-.first {
-  background-image: url("./assets/firstBackground.png");
-}
-
-.USA{
-  background-image: url("./assets/USAbackground.png");
-}
-
-.COL{
-  background-image: url("./assets/COLbackground.png");
-}
-
-html, body {
+body {
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
-  background-color: #242424;
-  margin: 0px;
-  height: 100%;
   display: flex;
   place-items: center;
   justify-content: center;
-  min-width: 320px;
-  min-height: 100vh;
   text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-x: center;
+  background-position-y: center;
   transition: background-image 2s;
+}
+
+.firstBackground {
+  background-image: url('./assets/firstBackground.png');
+}
+
+.usaBackground {
+  background-image: url('./assets/USAbackground.png');
+}
+
+.colBackground {
+  background-image: url('./assets/COLbackground.png');
 }
 
 h1 {
@@ -73,21 +68,21 @@ h1 {
 .state {
   fill:rgba(9, 20, 29, 0.8);
   pointer-events: none;
-  transition: 2s;
+  transition: 1.5s;
 }  
 
 /* color for undiscovered states */
 .stateNotDiscovered {
   fill:rgba(9, 20, 29, 0.8);
   pointer-events: none;
-  transition: 2s;
+  transition: 1.5s;
 }  
 
 /*  color for discovered states*/
 .stateDiscovered{
   fill:rgba(255, 255, 255, 0.9);
   pointer-events:all;
-  transition: 2s;
+  transition: 1.5s;
 }  
 
 .stateDiscovered:hover {
@@ -99,7 +94,7 @@ h1 {
 .stateDiscovered2{
   fill:rgba(255, 255, 255, 0.9);
   pointer-events:all;
-  transition: 2s;
+  transition: 1.5s;
 }  
 
 .stateDiscovered2:hover {
@@ -296,6 +291,10 @@ h1 {
     width:300px;
   }
 
+  .colMap {
+    width:200px;
+  }
+
   h1 {
     font-size: 20px;
   }
@@ -377,6 +376,11 @@ h1 {
   .usMap {
     width:400px;
   }
+
+  .colMap {
+    width:220px;
+  }
+
 
   h1 {
     font-size: 22px;
@@ -460,6 +464,10 @@ h1 {
     width:500px;
   }
 
+  .colMap {
+    width:250px;
+  }
+
   h1 {
     font-size: 24px;
   }
@@ -529,6 +537,10 @@ h1 {
 @media only screen and  (min-width:801px)  {
   .usMap {
     width:600px;
+  }
+
+  .colMap {
+    width:280px;
   }
 
   h1 {
@@ -613,6 +625,10 @@ h1 {
     width:700px;
   }
 
+  .colMap {
+    width:350px;
+  }
+
   h1 {
     font-size: 28px;
   }
@@ -625,6 +641,10 @@ h1 {
 @media only screen and  (min-width:1281px)  {
   .usMap {
     width:800px;
+  }
+
+  .colMap {
+    width:400px;
   }
 
   h1 {

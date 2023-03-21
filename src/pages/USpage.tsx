@@ -100,9 +100,14 @@ function USpage() {
       playDone();
     }
   }, [count, capitalChecked]);
+
+  useEffect(()=>{
+    document.body.className = '';
+    document.body.classList.add('usaBackground');
+  }, []);
   
   return (
-    <div className ="background USA">
+    <div className ="appContainer">
       <button className = "buttonTop goHome" onClick={goToHome}>
         <img src={homeIcon} className = "buttonIcon"/>
         <div className ="buttonText">Main Page</div>
