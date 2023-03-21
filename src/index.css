@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+.App {
+  animation: 1s ease-in-out 0s 1 slideInFromLeft;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-x: center;
+  background-position-y: center;
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+}
+
+.first {
+  background-image: url("./assets/firstBackground.png");
+}
+
+.USA{
+  background-image: url("./assets/USAbackground.png");
+}
+
+.COL{
+  background-image: url("./assets/COLbackground.png");
+}
+
+html, body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  background-color: #242424;
+  margin: 0px;
+  height: 100%;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  text-align: center;
+  transition: background-image 2s;
+}
+
+h1 {
+  font-family: 'Abril Fatface', cursive;
+}
+
+/* Show District of Columbia */
+.dccircle {
+  display:none
+} 
+
+/* default color for states */
+.state {
+  fill:rgba(9, 20, 29, 0.8);
+  pointer-events: none;
+  transition: 2s;
+}  
+
+/* color for undiscovered states */
+.stateNotDiscovered {
+  fill:rgba(9, 20, 29, 0.8);
+  pointer-events: none;
+  transition: 2s;
+}  
+
+/*  color for discovered states*/
+.stateDiscovered{
+  fill:rgba(255, 255, 255, 0.9);
+  pointer-events:all;
+  transition: 2s;
+}  
+
+.stateDiscovered:hover {
+  fill:rgb(225, 97, 97);
+  transition: 0.5s;
+}
+
+/*  color for discovered departments*/
+.stateDiscovered2{
+  fill:rgba(255, 255, 255, 0.9);
+  pointer-events:all;
+  transition: 2s;
+}  
+
+.stateDiscovered2:hover {
+  fill:rgb(194, 145, 41);
+  transition: 0.5s;
+}
+
+.goodWarning {
+  background-color: rgba(25, 97, 174, 0.664);
+  width: fit-content;
+  margin:auto;
+  padding: 7px 20px 7px 20px;
+  border-radius: 10px;
+  transition: 0.5s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
+}
+
+.goodWarning2 {
+  background-color: rgba(255, 255, 255, 0.858);
+  color:black;
+  width: fit-content;
+  margin:auto;
+  padding: 7px 20px 7px 20px;
+  border-radius: 10px;
+  transition: 0.5s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
+}
+
+.badWarning {
+  background-color: rgba(149, 20, 20, 0.684);
+  width: fit-content;
+  margin:auto;
+  padding: 7px 20px 7px 20px;
+  border-radius: 10px;
+  transition: 0.5s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
+}
+
+.badWarning2 {
+  background-color: rgba(21, 13, 13, 0.684);
+  width: fit-content;
+  margin:auto;
+  padding: 7px 20px 7px 20px;
+  border-radius: 10px;
+  transition: 0.5s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
+}
+
+.warningNot {
+  background-color: rgba(0,0,0,0);
+  transition: 0.5s;
+  width: 0px;
+  margin:auto;
+  height:0px;
+}
+
+.title{
+  margin: auto;
+  display: block;
+  background-color: #fff;
+  width: fit-content;
+  border-radius: 12px;
+  padding: 6px 20px 6px 20px;
+  color: black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
+}
+
+.description{
+  margin:15px 0 10px 0;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+}
+
+.description1{
+  margin:5px 0 10px 0;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+}
+
+.inputBox {
+  width: 300px;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding:5px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.314);
+  color: white;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
+  margin: 0 0 0 0;
+}
+
+.inputBox:focus{
+  outline: 0;
+}
+
+.missingCount{
+  margin: 10px 0 10px 0;
+}
+
+.welcomeTitle{
+  margin: 0;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.doneCard {
+  font-family: 'Abril Fatface', cursive;
+  transition: 0.5s;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
+}
+
+.countryButton {
+  background-color: rgba(0, 0, 0, 0.505);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 10px 0 10px 0;
+  transition: 0.5s;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.countryButton:hover{
+  background-color: rgba(209, 209, 209, 0.505);
+  font-weight:bold;
+  transition: 0.5s;
+}
+
+.countryLogo {
+  height:auto;
+  margin-bottom:3px;
+}
+
+.buttonContainer {
+  display:inline-flex;
+}
+
+.buttonTop {
+  position: absolute;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  top: 30px;
+  width: fit-content;
+  color:white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  background-color: transparent;
+}
+
+.goHome{
+  left:30px;
+}
+
+.refresh{
+  right:30px;
+}
+
+.buttonIcon {
+  margin: 0;
+  z-index: 10;
+}
+
+.buttonText {
+  display: inline-flex;
+  width: fit-content;
+  padding:5px 15px 5px 15px;
+  border-radius: 10px;
+  background-color: rgba(191, 191, 191, 0.343);
+  align-items: center;
+  justify-content: center;
+  margin-left:-20px;
+  opacity: 0%;
+  transition: 0.5s;
+}
+
+.buttonText:hover {
+  background-color: rgba(3, 3, 3, 0.343);
+}
+
+.buttonTop:hover .buttonText{
+  opacity:100%;
+  transition: 0.5s;
+  margin-left:5px;
+}
+
+.buttonTop:active .buttonText{
+  background-color: rgba(241, 50, 50, 0.343);
+  transition: 0.5s;
+}
+
+@media only screen and  (min-width:320px) {
+  .usMap {
+    width:300px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .signature {
+    width:130px;
+  }
+
+  .goodWarning {
+    font-size: 16px;
+  }
+  
+  .goodWarning2 {
+    font-size: 16px;
+  }
+  
+  .badWarning {
+    font-size: 16px;
+  }
+  
+  .badWarning2 {
+    font-size: 16px;
+  }
+  
+  .description{
+    font-size:18px;
+  }
+  
+  .description1{
+    font-size:18px;
+  }
+  
+  .inputBox {
+    width: 250px;
+    font-size: 17px;
+  }
+  
+  .missingCount{
+    font-size:17px;
+  }
+  
+  .doneCard {
+    font-size: 28px;
+  }
+
+  .buttonIcon {
+    width: 30px;
+  }
+  
+  .buttonText {
+    font-size: 5px;
+  }
+    
+  .buttonTop:hover .buttonText{
+    font-size: 15px;
+  }
+
+  .countryButton {
+    width: 130px;
+    height: 130px;
+    margin:5px;
+    font-size:15px;
+  }
+  
+  .countryButton:hover{
+    width: 140px;
+  }
+  
+  .countryLogo {
+    width:100px;
+  }
+
+  .innerContainer {
+    width:100px;
+  }
+}
+
+@media only screen and  (min-width:480px)  {
+  .usMap {
+    width:400px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .signature {
+    width:140px;
+  }
+
+  .goodWarning {
+    font-size: 17px;
+  }
+  
+  .goodWarning2 {
+    font-size: 17px;
+  }
+  
+  .badWarning {
+    font-size: 17px;
+  }
+  
+  .badWarning2 {
+    font-size: 17px;
+  }
+  
+  .description{
+    font-size:17px;
+  }
+  
+  .description1{
+    font-size:17px;
+  }
+  
+  .inputBox {
+    width: 250px;
+    font-size: 18px;
+  }
+  
+  .missingCount{
+    font-size:18px;
+  }
+  
+  .doneCard {
+    font-size: 30px;
+  }
+
+  .buttonIcon {
+    width: 40px;
+  }
+  
+  .buttonText {
+    font-size: 8px;
+  }
+    
+  .buttonTop:hover .buttonText{
+    font-size: 17px;
+  }
+
+  .countryButton {
+    width: 160px;
+    height: 160px;
+    margin:7px;
+    font-size:16px;
+  }
+  
+  .countryButton:hover{
+    width: 170px;
+  }
+  
+  .countryLogo {
+    width:120px;
+  }
+
+  .innerContainer {
+    width:120px;
+  }
+}
+
+@media only screen and  (min-width:600px)  {
+  .usMap {
+    width:500px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .signature {
+    width:150px;
+  }
+
+  .goodWarning {
+    font-size: 19px;
+  }
+  
+  .goodWarning2 {
+    font-size: 19px;
+  }
+  
+  .badWarning {
+    font-size: 19px;
+  }
+  
+  .badWarning2 {
+    font-size: 19px;
+  }
+  
+  .description{
+    font-size:19px;
+  }
+  
+  .description1{
+    font-size:19px;
+  }
+  
+  .inputBox {
+    width: 250px;
+    font-size: 19px;
+  }
+  
+  .missingCount{
+    font-size:19px;
+  }
+  
+  .doneCard {
+    font-size: 35px;
+  }
+
+  .countryButton {
+    width: 190px;
+    height: 190px;
+    margin:8px;
+    font-size:17px;
+  }
+  
+  .countryButton:hover{
+    width: 200px;
+  }
+  
+  .countryLogo {
+    width:150px;
+  }
+
+  .innerContainer {
+    width:150px;
+  }
+
+}
+
+@media only screen and  (min-width:801px)  {
+  .usMap {
+    width:600px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .signature {
+    width:160px;
+  }
+
+  .goodWarning {
+    font-size: 20px;
+  }
+  
+  .goodWarning2 {
+    font-size: 20px;
+  }
+  
+  .badWarning {
+    font-size: 20px;
+  }
+  
+  .badWarning2 {
+    font-size: 20px;
+  }
+  
+  .description{
+    font-size:20px;
+  }
+  
+  .description1{
+    font-size:20px;
+  }
+  
+  .inputBox {
+    width: 250px;
+    font-size: 20px;
+  }
+  
+  .missingCount{
+    font-size:20px;
+  }
+  
+  .doneCard {
+    font-size: 35px;
+  }
+
+  .buttonIcon {
+    width: 50px;
+  }
+  
+  .buttonText {
+    font-size: 10px;
+  }
+    
+  .buttonTop:hover .buttonText{
+    font-size: 18px;
+  }
+
+  .countryButton {
+    width: 200px;
+    height: 200px;
+    margin:10px;
+    font-size:18px;
+  }
+  
+  .countryButton:hover{
+    width: 215px;
+  }
+  
+  .countryLogo {
+    width:160px;
+  }
+
+  .innerContainer {
+    width:160px;
+  }
+}
+
+@media only screen and  (min-width:1025px)  {
+  .usMap {
+    width:700px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .signature {
+    width:170px;
+  }
+}
+
+@media only screen and  (min-width:1281px)  {
+  .usMap {
+    width:800px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .signature {
+    width:180px;
+  }
+}
+
+
+.footer{
+  position: fixed;
+  bottom: 10px;
+  width: fit-content;
+  right: 2%;
+  transition: 0.5s;
+  opacity: 80%;
+}
