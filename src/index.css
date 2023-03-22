@@ -59,6 +59,10 @@ body {
   background-image: url('./assets/FRAbackground.png');
 }
 
+.itaBackground {
+  background-image: url('./assets/ITAbackground.png');
+}
+
 h1 {
   font-family: 'Abril Fatface', cursive;
 }
@@ -106,7 +110,7 @@ h1 {
   transition: 0.5s;
 }
 
-/*  color for discovered regions*/
+/*  color for discovered regions france*/
 .stateDiscovered3{
   fill:rgba(255, 255, 255, 0.9);
   pointer-events:all;
@@ -115,6 +119,18 @@ h1 {
 
 .stateDiscovered3:hover {
   fill:rgb(143, 38, 38);
+  transition: 0.5s;
+}
+
+/*  color for discovered regions italy*/
+.stateDiscovered4{
+  fill:rgba(255, 255, 255, 0.9);
+  pointer-events:all;
+  transition: 1.5s;
+}  
+
+.stateDiscovered4:hover {
+  fill:rgb(68, 184, 58);
   transition: 0.5s;
 }
 
@@ -380,11 +396,7 @@ h1 {
     margin:5px;
     font-size:15px;
   }
-  
-  .countryButton:hover{
-    width: 140px;
-  }
-  
+    
   .countryLogo {
     width:100px;
   }
@@ -467,14 +479,10 @@ h1 {
   .countryButton {
     width: 160px;
     height: 160px;
-    margin:7px;
+    margin:5px;
     font-size:16px;
   }
-  
-  .countryButton:hover{
-    width: 170px;
-  }
-  
+    
   .countryLogo {
     width:120px;
   }
@@ -545,14 +553,10 @@ h1 {
   .countryButton {
     width: 190px;
     height: 190px;
-    margin:8px;
+    margin:7px;
     font-size:17px;
   }
-  
-  .countryButton:hover{
-    width: 200px;
-  }
-  
+    
   .countryLogo {
     width:150px;
   }
@@ -636,14 +640,10 @@ h1 {
   .countryButton {
     width: 200px;
     height: 200px;
-    margin:10px;
+    margin:8px;
     font-size:18px;
   }
-  
-  .countryButton:hover{
-    width: 215px;
-  }
-  
+    
   .countryLogo {
     width:160px;
   }

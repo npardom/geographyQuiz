@@ -1,0 +1,52 @@
+export interface Region {
+  [key: string]: string;
+}
+
+export const regions: Region = {
+  "abruzzo": "ABR",
+  "basilicata": "BAS",
+  "calabria": "CAL",
+  "campania": "CAM",
+  "emilia-romagna": "EMR",
+  "emilia romagna": "EMR",
+  "friuli-venezia giulia": "FVG",
+  "friuli venezia giulia": "FVG",
+  "lazio": "LAZ",
+  "liguria": "LIG",
+  "lombardia": "LOM",
+  "marche": "MAR",
+  "molise": "MOL",
+  "piemonte": "PIE",
+  "puglia": "PUG",
+  "sardegna": "SAR",
+  "sicilia": "SIC",
+  "toscana": "TOS",
+  "trentino-alto adige": "TAA",
+  "trentino alto adige": "TAA",
+  "umbria": "UMB",
+  "valle d'aosta": "VDA",
+  "veneto": "VEN",
+};
+
+export const rightNames: Region = {
+  "ABR": "Abruzzo",
+  "BAS": "Basilicata",
+  "CAL": "Calabria",
+  "CAM": "Campania",
+  "EMR": "Emilia-Romagna",
+  "FVG": "Friuli-Venezia Giulia",
+  "LAZ": "Lazio",
+  "LIG": "Liguria",
+  "LOM": "Lombardia",
+  "MAR": "Marche",
+  "MOL": "Molise",
+  "PIE": "Piemonte",
+  "PUG": "Puglia",
+  "SAR": "Sardegna",
+  "SIC": "Sicilia",
+  "TOS": "Toscana",
+  "TAA": "Trentino-Alto Adige",
+  "UMB": "Umbria",
+  "VDA": "Valle d'Aosta",
+  "VEN": "Veneto",
+};

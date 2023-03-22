@@ -1,6 +1,7 @@
 import USAlogo from "../assets/USA.png";
 import COLlogo from "../assets/COL.png";
 import FRAlogo from "../assets/FRA.png";
+import ITAlogo from "../assets/ITA.png";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react'
 
@@ -17,6 +18,10 @@ function StartPage() {
 
     function goToFRA(){
         navigate('/FRA-Quiz');
+    }
+
+    function goToITA(){
+        navigate('/ITA-Quiz');
     }
 
     useEffect(()=>{
@@ -47,6 +52,12 @@ function StartPage() {
                 <div className ="innerContainer">
                     <img src={FRAlogo} className = "countryLogo"/>
                     France
+                </div>
+            </div>
+            <div className = "countryButton" onClick={goToITA}>
+                <div className ="innerContainer">
+                    <img src={ITAlogo} className = "countryLogo"/>
+                    Italy
                 </div>
             </div>
         </div>
