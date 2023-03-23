@@ -28,6 +28,7 @@ export const departments: Department = {
   "guaviare": "guv",
   "huila": "hui",
   "la guajira": "lag",
+  "guajira": "lag",
   "magdalena": "mag",
   "meta": "met",
   "nariño": "nar",

@@ -2,6 +2,10 @@ import USAlogo from "../assets/USA.png";
 import COLlogo from "../assets/COL.png";
 import FRAlogo from "../assets/FRA.png";
 import ITAlogo from "../assets/ITA.png";
+import GERlogo from "../assets/GER.png";
+import SPAlogo from "../assets/SPA.png";
+import CANlogo from "../assets/CAN.png";
+import CountryButton from "../components/CountryButton";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react'
 
@@ -24,6 +28,18 @@ function StartPage() {
         navigate('/ITA-Quiz');
     }
 
+    function goToGER(){
+        navigate('/GER-Quiz');
+    }
+
+    function goToCAN(){
+        navigate('/CAN-Quiz');
+    }
+
+    function goToSPA(){
+        navigate('/SPA-Quiz');
+    }
+
     useEffect(()=>{
         document.body.className = '';
         document.body.classList.add('firstBackground');
@@ -36,30 +52,13 @@ function StartPage() {
         <h1 className = "welcomeTitle">Welcome</h1>
         <p className = "description1"> Select a country to start</p>
         <div className= "buttonContainer">
-            <div className = "countryButton" onClick={goToUSA}>
-                <div className ="innerContainer">
-                    <img src={USAlogo} className = "countryLogo"/>
-                    United States
-                </div>
-            </div>
-            <div className = "countryButton" onClick={goToCOL}>
-                <div className ="innerContainer">
-                    <img src={COLlogo} className = "countryLogo"/>
-                    Colombia
-                </div>
-            </div>
-            <div className = "countryButton" onClick={goToFRA}>
-                <div className ="innerContainer">
-                    <img src={FRAlogo} className = "countryLogo"/>
-                    France
-                </div>
-            </div>
-            <div className = "countryButton" onClick={goToITA}>
-                <div className ="innerContainer">
-                    <img src={ITAlogo} className = "countryLogo"/>
-                    Italy
-                </div>
-            </div>
+            <CountryButton action={goToUSA} name = "United States" image ={USAlogo}/>
+            <CountryButton action={goToCOL} name = "Colombia" image ={COLlogo}/>
+            <CountryButton action={goToFRA} name = "France" image ={FRAlogo}/>
+            <CountryButton action={goToITA} name = "Italy" image ={ITAlogo}/>
+            <CountryButton action={goToGER} name = "Germany" image ={GERlogo}/>
+            <CountryButton action={goToSPA} name = "Spain" image ={SPAlogo}/>
+            <CountryButton action={goToCAN} name = "Canada" image ={CANlogo}/>
         </div>
     </div>
     </div>

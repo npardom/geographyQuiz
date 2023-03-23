@@ -6,27 +6,22 @@ import yes from '../assets/yes.mp3';
 import no from '../assets/no.mp3';   
 import intro from '../assets/intro.mp3';  
 import done from '../assets/done.mp3';  
-import homeIcon from "../assets/home.png";
-import refreshIcon from "../assets/refresh.png";
-import { useNavigate } from "react-router-dom";
+import TopButtons from '../components/TopButtons';
 
 function FRApage() {
   const [playYes] = useSound(yes);
   const [playNo] = useSound(no);
   const [playIntro] = useSound(intro);
   const [playDone] = useSound(done);
-  const [title, setTitle] = useState("");
   const [warning, setWarning] = useState("");
   const [count, setCount] = useState(18);
   const [statesChecked, setStatesChecked] = useState<string[]>([]);
-  const navigate = useNavigate(); 
 
   const getInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(event.target.value);
     setWarning("");
-    var temporaryState = event.target.value.toLowerCase();
+    var temporaryState = event.target.value.toLowerCase().trim();
     if (temporaryState in regions) {
-      setTitle("");
+      event.target.value = "";
       var abbreviation = regions[temporaryState]; 
       if (statesChecked.includes(abbreviation)) {
         playNo();
@@ -42,13 +37,9 @@ function FRApage() {
     }
   }
 
-  function goToHome(){
-    navigate('/');
-  }
-
   function refreshQuiz(){
     playIntro();
-    setTitle("");
+    (document.getElementById("inputTextBox") as HTMLInputElement).value = "";
     setWarning("");
     setCount(18);
     setStatesChecked([]);
@@ -62,19 +53,13 @@ function FRApage() {
   }
 
   function TextInput() {
-    if (count > 0 ) {
-      return (
-      <input 
+    return <input 
+        id ="inputTextBox"
         onChange={getInput}
-        value={title}
         autoFocus
-        className = "inputBox" 
-        placeholder = "Write the region name">
+        placeholder = "Write the region name"
+        className = {count > 0 ? "inputBox":"notInputBox" }>
       </input>
-      )
-    }else{
-      return <></>
-    }
   }
 
   useEffect(()=>{
@@ -90,14 +75,7 @@ function FRApage() {
   
   return (
     <div className ="appContainer">
-      <button className = "buttonTop goHome" onClick={goToHome}>
-        <img src={homeIcon} className = "buttonIcon"/>
-        <div className ="buttonText">Main Page</div>
-      </button>
-      <button className = "buttonTop refresh" onClick={refreshQuiz}>
-        <div className ="buttonText">Restart</div>
-        <img src={refreshIcon} className = "buttonIcon"/>
-      </button>
+      <TopButtons refresh = {refreshQuiz}/>
     <div className="App">
       <h1 className = "title">Regions of France</h1>
       <p className ="description">Let's see how many regions you can remember.</p>
@@ -107,7 +85,7 @@ function FRApage() {
         <div className = {count > 0 ? "missingCount" : "doneCard"}>
           {count > 0 ? "You are missing " + count + " region(s)." : "You did it!"}
         </div>
-        <div className = {warning ? "badWarning2":"warningNot" }>
+        <div className = {warning ? "badWarning":"warningNot" }>
           <b>{warning}</b>
           </div>
       </div>

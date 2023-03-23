@@ -25,6 +25,7 @@ export const regions: Region = {
   "trentino alto adige": "TAA",
   "umbria": "UMB",
   "valle d'aosta": "VDA",
+  "valle d’aosta" : "VDA",
   "veneto": "VEN",
 };
 
@@ -47,6 +48,6 @@ export const rightNames: Region = {
   "TOS": "Toscana",
   "TAA": "Trentino-Alto Adige",
   "UMB": "Umbria",
-  "VDA": "Valle d'Aosta",
+  "VDA": "Valle d’Aosta",
   "VEN": "Veneto",
 };

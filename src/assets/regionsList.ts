@@ -6,6 +6,7 @@ export const regions: Region = {
   "bretagne": "bre",
   "pays de la loire": "pay",
   "nouvelle-aquitaine": "nou",
+  "nouvelle aquitaine": "nou",
   "occitanie": "occ",
   "provence-alpes-côte d'azur": "pro",
   "provence-alpes-cote d'azur": "pro",
@@ -34,6 +35,8 @@ export const regions: Region = {
   "mayotte": "may",
   "la réunion": "lar",
   "la reunion": "lar",
+  "réunion": "lar",
+  "reunion": "lar",
   "corse": "cor",
   "martinique": "mar"
 };

@@ -63,6 +63,17 @@ body {
   background-image: url('./assets/ITAbackground.png');
 }
 
+.gerBackground {
+  background-image: url('./assets/GERbackground.png');
+}
+
+.spaBackground {
+  background-image: url('./assets/SPAbackground.png');
+}
+
+.canBackground {
+  background-image: url('./assets/CANbackground.png');
+}
 h1 {
   font-family: 'Abril Fatface', cursive;
 }
@@ -131,6 +142,18 @@ h1 {
 
 .stateDiscovered4:hover {
   fill:rgb(68, 184, 58);
+  transition: 0.5s;
+}
+
+/*  color for discovered states germany*/
+.stateDiscovered5{
+  fill:rgba(255, 255, 255, 0.9);
+  pointer-events:all;
+  transition: 1.5s;
+}  
+
+.stateDiscovered5:hover {
+  fill:rgb(199, 151, 18);
   transition: 0.5s;
 }
 
@@ -204,6 +227,10 @@ h1 {
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
 }
 
+.notInputBox{
+  display: none;
+}
+
 .inputBox {
   width: 300px;
   font-family: 'Source Sans Pro', sans-serif;
@@ -243,7 +270,7 @@ h1 {
   align-items: center;
   justify-content: center;
   color: white;
-  padding: 10px 0 10px 0;
+  padding: 15px 0 15px 0;
   transition: 0.5s;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
@@ -257,12 +284,6 @@ h1 {
 .countryLogo {
   height:auto;
   margin-bottom:3px;
-}
-
-.buttonContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width:fit-content;
 }
 
 .buttonTop {
@@ -322,6 +343,10 @@ h1 {
 
 @media only screen and  (min-width:320px) {
   .usMap {
+    width:300px;
+  }
+
+  .canMap {
     width:300px;
   }
 
@@ -391,24 +416,34 @@ h1 {
   }
 
   .countryButton {
-    width: 130px;
-    height: 130px;
-    margin:5px;
-    font-size:15px;
+    width: 80px;
+    height: 80px;
+    margin:4px;
+    font-size:14px;
   }
     
   .countryLogo {
-    width:100px;
+    width:60px;
   }
 
   .innerContainer {
-    width:100px;
+    width:70px;
+  }
+
+  .buttonContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width:fit-content;
   }
 }
 
 @media only screen and  (min-width:480px)  {
   .usMap {
     width:400px;
+  }
+
+  .canMap {
+    width:380px;
   }
 
   .colMap {
@@ -477,18 +512,24 @@ h1 {
   }
 
   .countryButton {
-    width: 160px;
-    height: 160px;
-    margin:5px;
-    font-size:16px;
+    width: 105px;
+    height: 105px;
+    margin:4px;
+    font-size:15px;
   }
     
   .countryLogo {
-    width:120px;
+    width:70px;
   }
 
   .innerContainer {
-    width:120px;
+    width:90px;
+  }
+
+  .buttonContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width:fit-content;
   }
 }
 
@@ -499,6 +540,10 @@ h1 {
 
   .colMap {
     width:300px;
+  }
+
+  .canMap {
+    width:470px;
   }
 
   .fraMap {
@@ -551,25 +596,34 @@ h1 {
   }
 
   .countryButton {
-    width: 190px;
-    height: 190px;
-    margin:7px;
-    font-size:17px;
+    width: 120px;
+    height: 120px;
+    margin:6px;
+    font-size:15px;
   }
     
   .countryLogo {
-    width:150px;
+    width:80px;
   }
 
   .innerContainer {
-    width:150px;
+    width:90px;
   }
 
+  .buttonContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width:fit-content;
+  }
 }
 
 @media only screen and  (min-width:801px)  {
   .usMap {
     width:600px;
+  }
+
+  .canMap {
+    width:550px;
   }
 
   .colMap {
@@ -638,32 +692,32 @@ h1 {
   }
 
   .countryButton {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin:8px;
     font-size:18px;
   }
     
   .countryLogo {
-    width:160px;
+    width:120px;
   }
 
   .innerContainer {
-    width:160px;
-  }
-
-  .buttonContainer {
-    display:inline-flex;
+    width:120px;
   }
 }
 
 @media only screen and  (min-width:1025px)  {
   .usMap {
-    width:700px;
+    width:680px;
   }
 
   .colMap {
     width:420px;
+  }
+
+  .canMap {
+    width:640px;
   }
 
   .fraMap {
@@ -681,7 +735,11 @@ h1 {
 
 @media only screen and  (min-width:1281px)  {
   .usMap {
-    width:800px;
+    width:750px;
+  }
+
+  .canMap {
+    width:670px;
   }
 
   .colMap {

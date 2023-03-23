@@ -7,9 +7,7 @@ import no from '../assets/no.mp3';
 import special from '../assets/special.mp3'; 
 import intro from '../assets/intro.mp3';  
 import done from '../assets/done.mp3'; 
-import homeIcon from "../assets/home.png";
-import refreshIcon from "../assets/refresh.png";
-import { useNavigate } from "react-router-dom";
+import TopButtons from '../components/TopButtons';
 
 function USpage() {
   const [playYes] = useSound(yes);
@@ -17,19 +15,16 @@ function USpage() {
   const [playSpecial] = useSound(special);
   const [playIntro] = useSound(intro);
   const [playDone] = useSound(done);
-  const [title, setTitle] = useState("");
   const [warning, setWarning] = useState("");
   const [count, setCount] = useState(50);
   const [capitalChecked, setCapitalChecked] = useState(false);
-  const [statesChecked, setStatesChecked] = useState<string[]>([]);
-  const navigate = useNavigate(); 
+  const [statesChecked, setStatesChecked] = useState<string[]>([]); 
 
   const getInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(event.target.value);
     setWarning("");
-    var temporaryState = event.target.value.toLowerCase();
+    var temporaryState = event.target.value.toLowerCase().trim();
     if (temporaryState in states) {
-      setTitle("");
+      event.target.value = "";
       var abbreviation = states[temporaryState]; 
       if (statesChecked.includes(abbreviation)) {
         playNo();
@@ -49,7 +44,7 @@ function USpage() {
         setStatesChecked(statesChecked.concat([abbreviation]));
       }
     } else if (temporaryState == "d.c." || temporaryState == "dc" || temporaryState == "district of columbia" ){
-      setTitle("");
+      event.target.value = "";
       setCapitalChecked(true);
       document.getElementById("dc")?.classList.add("stateDiscovered");
       if (count > 0){
@@ -59,13 +54,9 @@ function USpage() {
     };
   }
 
-  function goToHome(){
-    navigate('/');
-  }
-
   function refreshQuiz(){
     playIntro();
-    setTitle("");
+    (document.getElementById("inputTextBox") as HTMLInputElement).value = "";
     setWarning("");
     setCount(50);
     setCapitalChecked(false);
@@ -80,19 +71,13 @@ function USpage() {
   }
 
   function TextInput() {
-    if (count > 0 || !capitalChecked ) {
-      return (
-      <input 
+    return <input 
+        id ="inputTextBox"
         onChange={getInput}
-        value={title}
         autoFocus
-        className = "inputBox" 
-        placeholder = "Write the state name">
+        placeholder = "Write the state name"
+        className = {count > 0 ? "inputBox":"notInputBox" }>
       </input>
-      )
-    }else{
-      return <></>
-    }
   }
 
   useEffect(()=>{
@@ -108,14 +93,7 @@ function USpage() {
   
   return (
     <div className ="appContainer">
-      <button className = "buttonTop goHome" onClick={goToHome}>
-        <img src={homeIcon} className = "buttonIcon"/>
-        <div className ="buttonText">Main Page</div>
-      </button>
-      <button className = "buttonTop refresh" onClick={refreshQuiz}>
-        <div className ="buttonText">Restart</div>
-        <img src={refreshIcon} className = "buttonIcon"/>
-      </button>
+      <TopButtons refresh = {refreshQuiz}/>
     <div className="App">
       <h1 className = "title">U.S. States</h1>
       <p className ="description">Let's see how many states you can remember.</p>
