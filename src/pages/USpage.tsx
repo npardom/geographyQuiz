@@ -70,16 +70,6 @@ function USpage() {
     }
   }
 
-  function TextInput() {
-    return <input 
-        id ="inputTextBox"
-        onChange={getInput}
-        autoFocus
-        placeholder = "Write the state name"
-        className = {count > 0 ? "inputBox":"notInputBox" }>
-      </input>
-  }
-
   useEffect(()=>{
     if (count == 0 && capitalChecked) {
       playDone();
@@ -99,7 +89,13 @@ function USpage() {
       <p className ="description">Let's see how many states you can remember.</p>
       <USMap/>
       <div className="card">
-        <TextInput/>
+      <input 
+        id ="inputTextBox"
+        onChange={getInput}
+        autoFocus
+        placeholder = "Write the state name"
+        className = {count > 0 ? "inputBox":"notInputBox" }>
+      </input>
         <div className = {count > 0 || !capitalChecked ? "missingCount" : "doneCard"}>
           {count > 0 && capitalChecked? "You are missing " + count + " state(s)." : count > 0 ? "You are missing " + count + " state(s) and the capital city." : count == 0 &&  !capitalChecked ? "You are missing the capital city." : "You did it!"}
         </div>

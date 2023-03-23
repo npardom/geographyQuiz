@@ -82,16 +82,6 @@ function CANpage() {
     document.body.className = '';
     document.body.classList.add('canBackground');
   }, []);
-
-  function TextInput() {
-    return <input 
-        id ="inputTextBox"
-        onChange={getInput}
-        autoFocus
-        placeholder = "Write the province name"
-        className = {count > 0 || count2 > 0 ? "inputBox":"notInputBox" }>
-      </input>
-  }
   
   return (
     <div className ="appContainer">
@@ -101,7 +91,13 @@ function CANpage() {
       <p className ="description">Let's see how many provinces you can remember.</p>
       <CANMap/>
       <div className="card">
-      <TextInput/>
+      <input 
+        id ="inputTextBox"
+        onChange={getInput}
+        autoFocus
+        placeholder = "Write the province name"
+        className = {count > 0 || count2 > 0 ? "inputBox":"notInputBox" }>
+      </input>
         <div className = {count > 0 || count2 > 0 ? "missingCount" : "doneCard"}>
           { count > 1 && count2 == 0 ? "You are missing " + count + " provinces." 
           : count == 1 && count2 == 0 ? "You are missing " + count + " province." 

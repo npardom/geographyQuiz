@@ -52,16 +52,6 @@ function ITApage() {
     }
   }
 
-  function TextInput() {
-    return <input 
-        id ="inputTextBox"
-        onChange={getInput}
-        autoFocus
-        placeholder = "Write the region name"
-        className = {count > 0 ? "inputBox":"notInputBox" }>
-      </input>
-  }
-
   useEffect(()=>{
     if (count == 0) {
       playDone();
@@ -81,7 +71,13 @@ function ITApage() {
       <p className ="description">Let's see how many regions you can remember.</p>
       <ITAMap/>
       <div className="card">
-        <TextInput/>
+      <input 
+        id ="inputTextBox"
+        onChange={getInput}
+        autoFocus
+        placeholder = "Write the region name"
+        className = {count > 0 ? "inputBox":"notInputBox" }>
+      </input>
         <div className = {count > 0 ? "missingCount" : "doneCard"}>
           {count > 0 ? "You are missing " + count + " region(s)." : "You did it!"}
         </div>

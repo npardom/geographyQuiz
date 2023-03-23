@@ -67,16 +67,6 @@ function GERpage() {
     }
   }
 
-  function TextInput() {
-    return <input 
-        id ="inputTextBox"
-        onChange={getInput}
-        autoFocus
-        placeholder = "Write the state name"
-        className = {count > 0 ? "inputBox":"notInputBox" }>
-      </input>
-  }
-
   useEffect(()=>{
     if (count == 0) {
       playDone();
@@ -96,7 +86,13 @@ function GERpage() {
       <p className ="description">Let's see how many states you can remember.</p>
       <GERMap/>
       <div className="card">
-        <TextInput/>
+      <input 
+        id ="inputTextBox"
+        onChange={getInput}
+        autoFocus
+        placeholder = "Write the state name"
+        className = {count > 0 ? "inputBox":"notInputBox" }>
+      </input>
         <div className = {count > 0 ? "missingCount" : "doneCard"}>
           {count > 0 ? "You are missing " + count + " state(s)." : "You did it!"}
         </div>

@@ -72,16 +72,6 @@ function SPApage() {
     }
   }
 
-  function TextInput() {
-    return <input 
-        id ="inputTextBox"
-        onChange={getInput}
-        autoFocus
-        placeholder = "Write the community name"
-        className = {count > 0 || count2 > 0 ? "inputBox":"notInputBox" }>
-      </input>
-  }
-
   useEffect(()=>{
     if (count == 0 && count2 == 0) {
       playDone();
@@ -101,7 +91,13 @@ function SPApage() {
       <p className ="description">Let's see how many communities you can remember.</p>
       <SPAMap/>
       <div className="card">
-        <TextInput/>
+      <input 
+        id ="inputTextBox"
+        onChange={getInput}
+        autoFocus
+        placeholder = "Write the community name"
+        className = {count > 0 || count2 > 0 ? "inputBox":"notInputBox" }>
+      </input>
         <div className = {count > 0 || count2 > 0 ? "missingCount" : "doneCard"}>
           {count > 1 && count2 == 0 ? "You are missing " + count + " communities." 
           : count == 1 && count2 == 0 ? "You are missing " + count + " community." 
