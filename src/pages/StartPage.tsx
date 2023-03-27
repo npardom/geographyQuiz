@@ -5,6 +5,7 @@ import ITAlogo from "../assets/ITA.png";
 import GERlogo from "../assets/GER.png";
 import SPAlogo from "../assets/SPA.png";
 import CANlogo from "../assets/CAN.png";
+import MEXlogo from "../assets/MEX.png";
 import CountryButton from "../components/CountryButton";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react'
@@ -40,6 +41,10 @@ function StartPage() {
         navigate('/SPA-Quiz');
     }
 
+    function goToMEX(){
+        navigate('/MEX-Quiz');
+    }
+
     useEffect(()=>{
         document.body.className = '';
         document.body.classList.add('firstBackground');
@@ -59,6 +64,7 @@ function StartPage() {
             <CountryButton action={goToGER} name = "Germany" image ={GERlogo}/>
             <CountryButton action={goToSPA} name = "Spain" image ={SPAlogo}/>
             <CountryButton action={goToCAN} name = "Canada" image ={CANlogo}/>
+            <CountryButton action={goToMEX} name = "Mexico" image ={MEXlogo}/>
         </div>
     </div>
     </div>

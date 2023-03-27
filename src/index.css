@@ -74,6 +74,11 @@ body {
 .canBackground {
   background-image: url('./assets/CANbackground.png');
 }
+
+.mexBackground {
+  background-image: url('./assets/MEXbackground.png');
+}
+
 h1 {
   font-family: 'Abril Fatface', cursive;
 }

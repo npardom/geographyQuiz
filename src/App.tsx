@@ -7,6 +7,7 @@ import GERpage from './pages/GERpage';
 import ITApage from './pages/ITApage';
 import SPApage from './pages/SPApage';
 import CANpage from './pages/CANpage';
+import MEXpage from './pages/MEXpage';
 import StartPage from './pages/StartPage';
 import Footer from "./components/Footer";
 
@@ -22,6 +23,7 @@ function App() {
       <Route path="/GER-Quiz" element={<GERpage />} />
       <Route path="/SPA-Quiz" element={<SPApage />} />
       <Route path="/CAN-Quiz" element={<CANpage />} />
+      <Route path="/MEX-Quiz" element={<MEXpage />} />
     </Routes>
     <Footer />
   </Router>
