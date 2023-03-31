@@ -31,7 +31,7 @@ function CANpage() {
         playNo();
         setWarning("You already have " + rightNames[abbreviation]);
       } else {
-        if(count > 1 || count2 > 1){
+        if(count > 1 || count2 >= 1){
           playYes();
         }
         document.getElementById(abbreviation)?.classList.add("stateDiscovered3");
@@ -45,7 +45,7 @@ function CANpage() {
         playNo();
         setWarning("You already have " + rightNames[abbreviation]);
       } else {
-        if(count > 1 || count2 > 1){
+        if(count >= 1 || count2 > 1){
           playSpecial();
         }
         document.getElementById(abbreviation)?.classList.add("stateDiscovered3");

@@ -94,7 +94,7 @@ function USpage() {
         onChange={getInput}
         autoFocus
         placeholder = "Write the state name"
-        className = {count > 0 ? "inputBox":"notInputBox" }>
+        className = {count > 0 || !capitalChecked? "inputBox":"notInputBox" }>
       </input>
         <div className = {count > 0 || !capitalChecked ? "missingCount" : "doneCard"}>
           {count > 0 && capitalChecked? "You are missing " + count + " state(s)." : count > 0 ? "You are missing " + count + " state(s) and the capital city." : count == 0 &&  !capitalChecked ? "You are missing the capital city." : "You did it!"}

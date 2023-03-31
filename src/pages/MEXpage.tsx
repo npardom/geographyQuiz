@@ -17,13 +17,27 @@ function MEXpage() {
   const [playDone] = useSound(done);
   const [warning, setWarning] = useState("");
   const [capitalChecked, setCapitalChecked] = useState(false);
+  const [bajaCal, setBajaCal] = useState(false);
   const [count, setCount] = useState(31);
   const [statesChecked, setStatesChecked] = useState<string[]>([]);
 
   const getInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setWarning("");
     var temporaryState = event.target.value.toLowerCase().trim();
-    if (temporaryState in states) {
+    if (temporaryState == "baja california" && !bajaCal){
+      event.target.value = "";
+      var abbreviation = states[temporaryState]; 
+      setBajaCal(true);
+      if(count > 1){
+        playYes();
+      }
+      document.getElementById(abbreviation)?.classList.add("stateDiscovered4");
+      setCount(count - 1);
+      setStatesChecked(statesChecked.concat([abbreviation]));
+    }else if (temporaryState == "baja california" && bajaCal){
+      playNo();
+      setWarning("You already have Baja California");
+    } else if (temporaryState in states && temporaryState != "baja california") {
       event.target.value = "";
       var abbreviation = states[temporaryState]; 
       if (statesChecked.includes(abbreviation)) {
