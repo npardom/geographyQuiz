@@ -1,6 +1,7 @@
 import { HashRouter as Router, Routes, Route} from 'react-router-dom';
 import './index.css'
 import USpage from './pages/USpage';
+import AUSpage from './pages/AUSpage';
 import COLpage from './pages/COLpage';
 import FRApage from './pages/FRApage';
 import GERpage from './pages/GERpage';
@@ -24,6 +25,7 @@ function App() {
       <Route path="/SPA-Quiz" element={<SPApage />} />
       <Route path="/CAN-Quiz" element={<CANpage />} />
       <Route path="/MEX-Quiz" element={<MEXpage />} />
+      <Route path="/AUS-Quiz" element={<AUSpage />} />
     </Routes>
     <Footer />
   </Router>
