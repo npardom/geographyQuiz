@@ -79,6 +79,10 @@ body {
   background-image: url('./assets/MEXbackground.png');
 }
 
+.ausBackground {
+  background-image: url('./assets/AUSbackground.png');
+}
+
 h1 {
   font-family: 'Abril Fatface', cursive;
 }

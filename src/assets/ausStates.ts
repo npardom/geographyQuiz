@@ -3,12 +3,12 @@ export interface States {
 }
 
 export const states: States = {
-  "nsw": "New South Wales",
-    "nt": "Northern Territory",
-    "qld": "Queensland",
-    "sa": "South Australia",
-    "tas": "Tasmania",
-    "vic": "Victoria",
-    "wa": "Western Australia",
-    "act": "Australian Capital Territory",
+  "new south wales": 'nsw',
+  "northern territory": 'nt',
+  "queensland": 'qld',
+  "south australia": 'sa',
+  "tasmania": 'tas',
+  "victoria": 'vic',
+  "western australia": 'wa',
+  "australian capital territory": 'act'
 };

@@ -46,7 +46,7 @@ function AUSpage() {
     } else if (temporaryState == "australian capital territory" || temporaryState == "act" ){
       event.target.value = "";
       setCapitalChecked(true);
-      document.getElementById("dc")?.classList.add("stateDiscovered");
+      document.getElementById("act")?.classList.add("stateDiscovered");
       if (count > 0){
         playSpecial();
         setWarning("You found the capital!");
@@ -78,14 +78,14 @@ function AUSpage() {
 
   useEffect(()=>{
     document.body.className = '';
-    document.body.classList.add('usaBackground');
+    document.body.classList.add('ausBackground');
   }, []);
   
   return (
     <div className ="appContainer">
       <TopButtons refresh = {refreshQuiz}/>
     <div className="App">
-      <h1 className = "title">Australia States</h1>
+      <h1 className = "title">Australian States</h1>
       <p className ="description">Let's see how many states you can remember.</p>
       <AUSMap/>
       <div className="card">
